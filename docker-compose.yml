@@ -3,13 +3,13 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${DB_NAME:-TMS_PROD}
-      POSTGRES_USER: ${DB_USER:-taskflow}
+      POSTGRES_DB: ${DB_NAME:-TMS_PROD_CLIENT}
+      POSTGRES_USER: ${DB_USER:-taskflow_client}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-taskflow} -d ${DB_NAME:-TMS_PROD}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-taskflow_client} -d ${DB_NAME:-TMS_PROD_CLIENT}"]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -27,8 +27,8 @@ services:
       PORT: 8050
       DB_HOST: db
       DB_PORT: 5432
-      DB_NAME: ${DB_NAME:-TMS_PROD}
-      DB_USER: ${DB_USER:-taskflow}
+      DB_NAME: ${DB_NAME:-TMS_PROD_CLIENT}
+      DB_USER: ${DB_USER:-taskflow_client}
       DB_PASSWORD: ${DB_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
       JWT_ACCESS_EXPIRATION_MINUTES: ${JWT_ACCESS_EXPIRATION_MINUTES:-43200}

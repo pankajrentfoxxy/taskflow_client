@@ -105,13 +105,13 @@ const syncModels = async () => {
   await Activity.sync();
   await Escalation.sync();
   await Notification.sync();
-  await Attachment.sync();
   await Otp.sync();
   await TaskMember.sync();
   await ChatConversation.sync();
   await ChatGroupMember.sync();
   await ChatMessage.sync();
   await ChatMessageReaction.sync();
+  await Attachment.sync();
 };
 
 export const initApp = async () => {

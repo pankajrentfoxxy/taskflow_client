@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   // Allow phones/tablets on the office LAN to load dev-server assets
   // (Next.js 15 blocks cross-origin /_next/* requests in dev by default).
   allowedDevOrigins: [

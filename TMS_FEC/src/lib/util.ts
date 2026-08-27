@@ -7,7 +7,7 @@ export { toast, getErrorMessage, TASK_ACTION_TOAST } from './toast';
 /** @deprecated use parseTimestamp */
 export const toTimestamp = parseTimestamp;
 
-export const API_BASE = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api').replace(/\/$/, '');
+export const API_BASE = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8050/api').replace(/\/$/, '');
 
 export function apiUrl(path: string): string {
   const normalized = path.startsWith('/api') ? path.slice(4) : path;
